@@ -36,6 +36,9 @@ const StyledLabel = styled.label`
   border-radius: 0.8rem;
   flex-grow: 1;
   cursor: pointer;
+  &:hover {
+    outline: 1px solid var(--green-600) !important;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -56,7 +59,12 @@ export default function RadioField() {
         Query Type <sup>*</sup>
       </StyledLegend>
       <StyledDivdedContainer style={{ clear: "both" }}>
-        <StyledLabel>
+        <StyledLabel
+          style={{
+            outline: errors.queryType ? "1px solid var(--red)" : "",
+            border: errors.queryType ? "none" : "1px solid var(--grey-500)",
+          }}
+        >
           <StyledInput
             type="radio"
             value="general-enquiry"
@@ -65,7 +73,12 @@ export default function RadioField() {
           General Enquiry
         </StyledLabel>
 
-        <StyledLabel>
+        <StyledLabel
+          style={{
+            outline: errors.queryType ? "1px solid var(--red)" : "",
+            border: errors.queryType ? "none" : "1px solid var(--grey-500)",
+          }}
+        >
           <StyledInput
             type="radio"
             value="support-request"

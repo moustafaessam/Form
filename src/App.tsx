@@ -4,6 +4,8 @@ import Title from "./components/Title";
 import { FormProvider, useForm } from "react-hook-form";
 import InputField from "./components/InputField";
 import RadioField from "./components/RadioField";
+import Message from "./components/Message";
+import Checklist from "./components/Checklist";
 
 const StyledMainContainer = styled.form`
   background-color: var(--white);
@@ -63,8 +65,9 @@ export default function App() {
             </StyledDivdedContainer>
             <InputField fieldType="email" />
             <RadioField />
+            <Message />
           </StyledInnerContainer>
-          {/* <button type="submit">Submit</button> */}
+          <Checklist />
         </StyledMainContainer>
       </FormProvider>
     </>
