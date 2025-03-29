@@ -4,10 +4,12 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Karla Bold";
     src: url("/assets/fonts/static/Karla-Bold.ttf");
+    font-display: swap;
   }
   @font-face {
     font-family: "Karla Regular";
     src: url("/assets/fonts/static/Karla-Regular.ttf");
+    font-display: swap;
   }
   * , ::before , ::after {
     margin: 0;
