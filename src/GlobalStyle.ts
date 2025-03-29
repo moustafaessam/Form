@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Karla Bold";
+    src: url("/assets/fonts/static/Karla-Bold.ttf");
+  }
+  @font-face {
+    font-family: "Karla Regular";
+    src: url("/assets/fonts/static/Karla-Regular.ttf");
+  }
   * , ::before , ::after {
     margin: 0;
     padding: 0;
