@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import Title from "./components/Title";
 import { FormProvider, useForm } from "react-hook-form";
-import Name from "./components/Name";
+import Name from "./components/InputField";
 
 const StyledMainContainer = styled.form`
   background-color: var(--white);
@@ -10,6 +10,9 @@ const StyledMainContainer = styled.form`
   border-radius: 1.6rem;
   max-width: 73.6rem;
   width: 100%;
+  margin: 0 2.4rem;
+  @media (max-width: 1100px) {
+  }
   @media (max-width: 620px) {
     padding: 2.4rem;
   }
@@ -20,7 +23,7 @@ const StyledNameContainer = styled.div`
   justify-content: space-between;
   gap: 1.6rem;
   @media (max-width: 620px) {
-    display: block;
+    flex-direction: column;
   }
 `;
 
@@ -54,11 +57,12 @@ export default function App() {
           <Title />
           <StyledInnerContainer>
             <StyledNameContainer>
-              <Name nameType="first name" />
-              <Name nameType="last name" />
+              <Name fieldType="first name" />
+              <Name fieldType="last name" />
             </StyledNameContainer>
+            <Name fieldType="email" />
           </StyledInnerContainer>
-          <button type="submit">Submit</button>
+          {/* <button type="submit">Submit</button> */}
         </StyledMainContainer>
       </FormProvider>
     </>

@@ -40,12 +40,17 @@ const StyledError = styled.p`
   font-size: var(--body-sm);
 `;
 
-type NameProps = {
-  nameType: "first name" | "last name";
+type InputProps = {
+  fieldType: "first name" | "last name" | "email";
 };
 
-export default function Name({ nameType }: NameProps) {
-  const fieldName = nameType === "first name" ? "firstName" : "lastName";
+export default function InputField({ fieldType }: InputProps) {
+  const fieldName =
+    fieldType === "first name"
+      ? "firstName"
+      : fieldType === "last name"
+      ? "lastName"
+      : "email";
 
   const {
     register,
@@ -55,13 +60,21 @@ export default function Name({ nameType }: NameProps) {
   return (
     <StyledContainer>
       <StyledLabel htmlFor={fieldName}>
-        {nameType} <sup>*</sup>
+        {fieldType} <sup>*</sup>
       </StyledLabel>
       <StyledInput
-        type="text"
+        type={fieldType === "email" ? "email" : "text"}
         id={fieldName}
         autoComplete="on"
-        {...register(fieldName, { required: "This field is required" })}
+        {...register(fieldName, {
+          required: "This field is required",
+          ...(fieldType === "email" && {
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Invalid email address",
+            },
+          }),
+        })}
         aria-invalid={errors[fieldName] ? "true" : "false"}
         style={{
           outline: errors[fieldName] ? "1px solid var(--red)" : "",
