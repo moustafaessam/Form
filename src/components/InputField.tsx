@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
   gap: 0.8rem;
 `;
 
-const StyledLabel = styled.label`
+export const StyledLabel = styled.label`
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -34,7 +34,7 @@ const StyledInput = styled.input`
   }
 `;
 
-const StyledError = styled.p`
+export const StyledError = styled.p`
   font-family: "Karla Regular";
   color: var(--red);
   font-size: var(--body-sm);
