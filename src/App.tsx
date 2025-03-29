@@ -6,6 +6,7 @@ import InputField from "./components/InputField";
 import RadioField from "./components/RadioField";
 import Message from "./components/Message";
 import Checklist from "./components/Checklist";
+import Button from "./components/Button";
 
 const StyledMainContainer = styled.form`
   background-color: var(--white);
@@ -42,6 +43,7 @@ export type FormInputs = {
   email: string;
   queryType: string;
   message: string;
+  consent: boolean;
 };
 
 export default function App() {
@@ -49,7 +51,7 @@ export default function App() {
   const { handleSubmit } = form;
 
   function onSubmit(data: FormInputs) {
-    console.log("Form Submitted:", data);
+    return data;
   }
 
   return (
@@ -68,6 +70,7 @@ export default function App() {
             <Message />
           </StyledInnerContainer>
           <Checklist />
+          <Button />{" "}
         </StyledMainContainer>
       </FormProvider>
     </>
