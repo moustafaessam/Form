@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
+import Title from "./components/Title";
 
 const StyledMainContainer = styled.form`
   background-color: var(--white);
@@ -14,7 +15,9 @@ export default function App() {
   return (
     <>
       <GlobalStyle />
-      <StyledMainContainer></StyledMainContainer>
+      <StyledMainContainer>
+        <Title />
+      </StyledMainContainer>
     </>
   );
 }
